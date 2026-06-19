@@ -1,2 +1,31 @@
-# portal-m-leyu-com-cn
-乐鱼体育 - https://portal-m-leyu.com.cn
+# 乐鱼体育 - 官方网站
+
+欢迎访问 **乐鱼体育** 官方网站 [https://portal-m-leyu.com.cn](https://portal-m-leyu.com.cn)。乐鱼体育是一个专注于体育资讯与在线服务的综合性平台，致力于为用户提供便捷、稳定的访问体验。
+
+## 简介
+
+乐鱼体育通过 [https://portal-m-leyu.com.cn](https://portal-m-leyu.com.cn) 为用户提供一站式体育相关内容服务。平台围绕体育赛事、运动信息及用户互动等功能展开，旨在满足体育爱好者的日常需求。无论您是关注赛事动态还是寻找相关服务，乐鱼体育都能为您提供可靠的入口。
+
+## 特点
+
+- **稳定访问**：乐鱼体育通过 [https://portal-m-leyu.com.cn](https://portal-m-leyu.com.cn) 提供持续可用的服务，用户无需频繁更换地址。
+- **内容聚焦**：平台主要围绕体育领域，内容真实、信息清晰，避免冗余或无关干扰。
+- **用户友好**：界面设计简洁直观，便于快速找到所需功能或资讯。
+
+## 访问方式
+
+您可以直接在浏览器中输入以下网址访问乐鱼体育：
+
+[https://portal-m-leyu.com.cn](https://portal-m-leyu.com.cn)
+
+建议将乐鱼体育的官方链接加入书签，以便日后快速访问。如遇到网络问题，请检查本地网络环境或尝试使用其他设备访问。
+
+## 注意事项
+
+- 请确保通过 [https://portal-m-leyu.com.cn](https://portal-m-leyu.com.cn) 访问乐鱼体育，避免使用非官方渠道。
+- 本平台仅提供体育相关内容，不涉及任何违法或违规服务。
+- 如发现网站无法访问，请耐心等待或关注官方后续通知。
+
+---
+
+乐鱼体育感谢您的支持与信任，欢迎通过 [https://portal-m-leyu.com.cn](https://portal-m-leyu.com.cn) 体验我们的服务。
