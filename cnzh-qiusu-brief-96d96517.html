@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球速体育 · 轻量导航介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #faf9f7;
+            color: #1f2a3a;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #b6422b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #862e1c;
+            text-decoration: underline;
+        }
+
+        /* header + 深色导航区域 */
+        .site-header {
+            background: #1c262f;
+            color: #e6e9ed;
+            padding: 0 2rem;
+        }
+        .header-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #f0edea;
+        }
+        .logo a {
+            color: #f0edea;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .logo a:hover {
+            color: #d8c5b8;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            color: #c5cdd6;
+        }
+        .nav-links a:hover {
+            color: #faf9f7;
+        }
+
+        /* hero 头图 — 深色，简洁 */
+        .hero {
+            background: #232e3a;
+            padding: 4.5rem 2rem 4rem;
+            text-align: center;
+            color: #eef1f4;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 1.8rem;
+            font-size: 1.1rem;
+            color: #bcc8d4;
+        }
+
+        /* 通用容器 */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 介绍 & 可信说明 */
+        .intro-section {
+            padding: 3.5rem 0 2rem;
+        }
+        .intro-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+        .intro-text {
+            flex: 2 1 320px;
+        }
+        .intro-text h2 {
+            font-size: 1.8rem;
+            font-weight: 550;
+            margin-bottom: 1rem;
+            color: #1f2a3a;
+        }
+        .intro-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2e3a4a;
+        }
+        .intro-highlight {
+            flex: 1 1 220px;
+            background: #f1ede8;
+            padding: 1.8rem 1.5rem;
+            border-radius: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+        .intro-highlight h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #2b3a47;
+        }
+        .intro-highlight ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .intro-highlight li {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .intro-highlight li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #b6422b;
+            font-weight: bold;
+        }
+
+        /* 三个场景卡片模块 */
+        .scenes {
+            padding: 2.5rem 0 3rem;
+        }
+        .scenes h2 {
+            font-size: 1.8rem;
+            font-weight: 550;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1f2a3a;
+        }
+        .scene-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.8rem;
+            flex: 1 1 260px;
+            max-width: 330px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+            transition: transform 0.15s, box-shadow 0.2s;
+            border: 1px solid #ece8e3;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.06);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #23303e;
+        }
+        .card p {
+            font-size: 0.96rem;
+            color: #3f4d5c;
+            margin-bottom: 0.5rem;
+        }
+        .card .tag {
+            display: inline-block;
+            background: #efe7e0;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #5a4b3e;
+            margin-top: 0.6rem;
+        }
+
+        /* 常见说明 / FAQ 摘要 */
+        .faq-preview {
+            background: #f5f2ee;
+            padding: 3rem 2rem;
+            border-radius: 32px 32px 0 0;
+            margin-top: 1rem;
+        }
+        .faq-preview h2 {
+            font-size: 1.6rem;
+            font-weight: 550;
+            margin-bottom: 2rem;
+            color: #1f2a3a;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ddd6ce;
+            padding-bottom: 1.2rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+            color: #2c3b49;
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #3f4f60;
+            margin: 0;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #1c262f;
+            color: #b1bbc9;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+        }
+        .site-footer a {
+            color: #ddd3c9;
+        }
+        .site-footer a:hover {
+            color: white;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 0.5rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-grid {
+                flex-direction: column;
+            }
+            .scene-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo"><a href="https://cnzh-qiusu.com">球速体育</a></div>
+        <div class="nav-links">
+            <a href="#intro">站点介绍</a>
+            <a href="#scenes">使用场景</a>
+            <a href="#faq">常见说明</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>球速体育 · 信息与服务</h1>
+    <p>一个专注于体育资讯与赛事参考的平台，帮助爱好者快速了解比赛动态与相关数据。以简洁、直接的方式呈现内容，不夸张，不渲染。</p>
+    <p style="font-size:0.95rem; color:#a5b3c2;">从导航出发，找到你关心的体育内容。</p>
+</section>
+
+<section class="intro-section container" id="intro">
+    <div class="intro-grid">
+        <div class="intro-text">
+            <h2>关于球速体育</h2>
+            <p>无论你是刚接触体育的新朋友，还是已经有固定关注项目的资深爱好者，<a href="https://cnzh-qiusu.com">球速体育</a>都提供了一种轻量、清晰的浏览方式。我们不做冗杂的广告堆砌，而是尽量把有用的信息整理好，让你花更少时间找内容。</p>
+            <p>网站采用模块化布局，从热门赛事到深度数据，你可以按自己的节奏查看。没有弹窗干扰，没有诱导注册，就是踏踏实实地呈现体育相关内容。</p>
+        </div>
+        <div class="intro-highlight">
+            <h3>可信说明</h3>
+            <ul>
+                <li>内容来源参考公开赛事信息</li>
+                <li>不虚构数据，不夸大描述</li>
+                <li>界面直观，减少不必要的跳转</li>
+                <li>持续更新，保持信息时效</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="scenes container" id="scenes">
+    <h2>三个典型场景</h2>
+    <div class="scene-cards">
+        <div class="card">
+            <h3>赛前速览</h3>
+            <p>想快速了解今晚有哪些重要比赛？直接查看赛事列表，时间、对阵、赛前简评一目了然。</p>
+            <span class="tag">信息整合</span>
+        </div>
+        <div class="card">
+            <h3>赛后回顾</h3>
+            <p>比赛结束不久，就能看到精简的赛果与关键节点复盘。没有冗长分析，只保留实际内容。</p>
+            <span class="tag">即时更新</span>
+        </div>
+        <div class="card">
+            <h3>球队动态</h3>
+            <p>关注某支球队的近期状态？查看其最近几场的表现、得分趋势以及常规数据变化。</p>
+            <span class="tag">纵向对比</span>
+        </div>
+    </div>
+</section>
+
+<section class="faq-preview container" id="faq">
+    <h2>常见说明</h2>
+    <div class="faq-item">
+        <strong>球速体育的数据来源是什么？</strong>
+        <p>网站主要整合公开的赛事数据与体育资讯，不提供未经核实的内部信息。所有内容仅供个人参考。</p>
+    </div>
+    <div class="faq-item">
+        <strong>是否需要注册或付费？</strong>
+        <p>不需要。当前版本完全免费开放，无需登录即可浏览大部分内容。未来若有调整会提前说明。</p>
+    </div>
+    <div class="faq-item">
+        <strong>内容更新频率如何？</strong>
+        <p>赛事期间保持较高更新频率，非赛事日以球队动态和背景信息为主。具体视实际情况而定。</p>
+    </div>
+    <p style="margin-top:1.2rem; font-size:0.93rem; color:#5b6b7c;">如果有其他疑问，可以随时浏览 <a href="https://cnzh-qiusu.com">球速体育</a> 了解更多细节。</p>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 球速体育 · 信息展示页 · 内容仅供个人参考</p>
+        <p style="margin-top:0.5rem;"><a href="https://cnzh-qiusu.com">球速体育</a> — 专注体育内容轻导航</p>
+    </div>
+</footer>
+
+</body>
+</html>
