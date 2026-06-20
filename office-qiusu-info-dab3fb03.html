@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球速体育 · 温故而知新</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Serif SC", "Source Han Serif CN", "华文宋体", "宋体", Georgia, serif;
+            background: #f0f2f0;
+            color: #2f3e2f;
+            line-height: 1.8;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            width: 100%;
+            background: #faf9f5;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 20, 10, 0.06);
+            padding: 3rem 2.5rem;
+            border: 1px solid #e2e7df;
+        }
+
+        /* hero 开场 */
+        .hero {
+            margin-bottom: 3.5rem;
+            border-bottom: 1px dashed #cdd6c6;
+            padding-bottom: 2.2rem;
+        }
+
+        .hero-headline {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: #3a4a3a;
+            margin-bottom: 1rem;
+        }
+
+        .hero-headline em {
+            font-style: normal;
+            background: #e7ede4;
+            padding: 0 0.4rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 80%;
+            color: #4f624f;
+        }
+
+        /* 承接段落 */
+        .intro-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .intro-text {
+            flex: 2;
+            min-width: 260px;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.4rem;
+            font-size: 1.02rem;
+        }
+
+        .intro-highlight {
+            flex: 1.2;
+            min-width: 200px;
+            background: #f3f7f1;
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem 2rem;
+            border: 1px solid #d3ddd0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .intro-highlight p {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .intro-highlight .signed {
+            text-align: right;
+            font-style: italic;
+            color: #5d735d;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* 特点列表 — 温和卡片 */
+        .features-section {
+            margin: 3.2rem 0 2.8rem;
+        }
+
+        .features-title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 2rem;
+            color: #415641;
+            border-left: 4px solid #9ab394;
+            padding-left: 1.2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .feature-card {
+            background: #fffffffc;
+            border: 1px solid #dde4d9;
+            border-radius: 24px;
+            padding: 1.8rem 1.4rem 1.6rem;
+            box-shadow: 0 4px 12px rgba(0, 20, 10, 0.03);
+            transition: all 0.15s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #b7c9b2;
+            box-shadow: 0 8px 16px rgba(60, 90, 60, 0.04);
+            background: #fdfdfa;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3b503b;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #4e614e;
+            line-height: 1.7;
+        }
+
+        /* 场景段落 */
+        .scene-block {
+            background: #f5f8f4;
+            padding: 2rem 2.2rem;
+            border-radius: 24px;
+            border: 1px solid #dae2d5;
+            margin: 2.8rem 0;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .scene-block h2 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 1.4rem;
+            color: #3c523c;
+        }
+
+        .scene-block p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .scene-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 温和结尾 + 嵌入式链接 */
+        .gentle-closing {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d9e1d4;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1.5rem;
+        }
+
+        .gentle-closing .left {
+            flex: 2;
+            min-width: 200px;
+        }
+
+        .gentle-closing .left p {
+            font-size: 1.02rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .gentle-closing .right {
+            flex: 1;
+            min-width: 160px;
+            text-align: right;
+            background: #f3f7f1;
+            padding: 1rem 1.5rem;
+            border-radius: 40px;
+            border: 1px solid #d1dbce;
+            font-size: 0.98rem;
+        }
+
+        .gentle-closing a {
+            color: #3b6b3b;
+            text-decoration: none;
+            border-bottom: 1px solid #b2c9b2;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 400;
+        }
+
+        .gentle-closing a:hover {
+            color: #1f3f1f;
+            border-bottom-color: #1f3f1f;
+        }
+
+        /* 小 FAQ 摘要 */
+        .faq-mini {
+            margin: 2.2rem 0 0.5rem;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            border: 1px solid #e2e9df;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .faq-mini summary {
+            font-weight: 400;
+            font-size: 1.05rem;
+            cursor: pointer;
+            color: #3e553e;
+            padding: 0.3rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-mini summary::before {
+            content: "▸ ";
+            color: #7f9a7a;
+            font-size: 1.2rem;
+            margin-right: 0.3rem;
+        }
+
+        .faq-mini[open] summary::before {
+            content: "▾ ";
+        }
+
+        .faq-mini .answer {
+            margin-top: 1rem;
+            padding-left: 0.8rem;
+            border-left: 2px solid #ccdac6;
+            font-size: 0.98rem;
+            color: #4b614b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 650px) {
+            .wrapper {
+                padding: 2rem 1.2rem;
+            }
+
+            .hero-headline {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                max-width: 100%;
+            }
+
+            .intro-block {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gentle-closing {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .gentle-closing .right {
+                text-align: left;
+                width: 100%;
+            }
+
+            .scene-block {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .wrapper {
+                padding: 1.5rem 0.8rem;
+                border-radius: 18px;
+            }
+
+            .hero-headline {
+                font-size: 1.4rem;
+            }
+
+            .feature-card {
+                padding: 1.3rem;
+            }
+
+            .faq-mini {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 开场短句 hero -->
+        <div class="hero">
+            <div class="hero-headline">
+                有一处地方，叫 <em>球速体育</em>。
+            </div>
+            <p>
+                这里的故事，从从容容，不急不躁。像午后林间洒下的光，也像一场刚刚好的对谈。
+            </p>
+        </div>
+
+        <!-- 承接段落：从关键词背后的主题展开 -->
+        <div class="intro-block">
+            <div class="intro-text">
+                <p>
+                    人们常说，体育是生活里的一扇窗。透过它，我们看见自己，也看见他人——看见奔跑时耳边呼啸的风，看见球场上偶然交汇的眼神，看见输赢之外那些细碎的、属于人的温度。 
+                </p>
+                <p>
+                    我们所理解的「球速体育」，并不只是一串字符，也不仅仅是竞技的刻度。它更像一种氛围：当你打开页面，感受到的是一种平实而专注的陪伴。没有喧哗，没有催促，只有对运动本真的尊重，以及对每一个普通参与者的关照。
+                </p>
+                <p>
+                    从清晨的慢跑到深夜的球场，从一个人的练习到一群人的欢呼，体育的面貌本来就很丰富。而一个好的平台，应当是安静的容器，而不是嘈杂的扩音器。
+                </p>
+            </div>
+            <div class="intro-highlight">
+                <p>
+                    几年前第一次点开 <a href="https://office-qiusu.com" style="color: #3b6b3b; text-decoration: none; border-bottom: 1px solid #b2c9b2;">球速体育</a>，发现它的界面比想象中克制。没有弹窗，没有浮夸的标语，只有干净的信息和一种“等你来发现”的从容。
+                </p>
+                <p>
+                    后来渐渐成了习惯——不是因为它多特别，而是因为它不打扰，也不缺席。
+                </p>
+                <p class="signed">—— 一位常客</p>
+            </div>
+        </div>
+
+        <!-- 特点列表 卡片 -->
+        <div class="features-section">
+            <div class="features-title">一些安静的特质</div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>内容平实</h3>
+                    <p>没有夸张的标题，不制造焦虑。每一篇文章、每一个数据，都像是朋友间的分享。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>节奏自在</h3>
+                    <p>你可以在任何时间打开，不用追赶进度。信息以一种温和的速率更新，像晨跑一样自然。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>社区安静</h3>
+                    <p>留言区少见争吵，更多是理性的讨论和善意的提问。氛围像社区球场，彼此认识或不认识，都能聊几句。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>界面干净</h3>
+                    <p>浅色背景、清晰分区、不刺眼的字体。阅读体验是第一位的，广告和装饰都退到了幕后。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 场景段落 -->
+        <div class="scene-block">
+            <h2>一个寻常的下午</h2>
+            <p>
+                你刚结束一天的工作，换上宽松的衣服。窗外的光线从金黄变成橘粉。你打开手机或电脑，没有特别的目的，就是想看看今天的比赛结果、某位球员的近况，或者只是一些随性的运动随笔。
+            </p>
+            <p>
+                你点开 <a href="https://office-qiusu.com" style="color: #3b6b3b; text-decoration: none; border-bottom: 1px solid #b2c9b2;">球速体育</a>，页面加载很快。头条是一篇关于耐力训练的小文，语气平淡却实在。你往下翻了翻，看到一条关于周末业余联赛的讨论，有人分享了自己第一次跑完十公里的感受。没有点赞数，没有排行榜，只有几个真诚的回复：“慢慢来”“真不错”“下次一起”。
+            </p>
+            <p>
+                你关掉页面，出门散步。这个下午和平时没什么两样，但你知道，有些东西一直静静在那里，不急，也不远。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <details class="faq-mini">
+            <summary>一些你可能想问的</summary>
+            <div class="answer">
+                <p><strong>这个网站适合什么样的人？</strong> 适合对体育有兴趣、但不喜欢信息轰炸的人。不管你是资深爱好者还是刚起步的初学者，都能找到舒服的角落。</p>
+                <p><strong>内容更新频繁吗？</strong> 保持稳定的节奏，不会过度刷屏。每天都有新内容，但不至于让你感到追赶不及。</p>
+                <p><strong>需要注册吗？</strong> 浏览大部分内容无需注册。如果你愿意参与讨论，注册流程也非常简洁，不会索要多余信息。</p>
+                <p style="margin-bottom: 0;"><strong>移动端体验如何？</strong> 响应式设计，手机和电脑上都能获得一致的阅读感。卡片和字体都根据屏幕自适应。</p>
+            </div>
+        </details>
+
+        <!-- 温和结尾 嵌入链接 -->
+        <div class="gentle-closing">
+            <div class="left">
+                <p>
+                    如果你也喜欢这样一种方式——不喧哗，但始终在场；不催促，但一直都在。
+                </p>
+                <p>
+                    不妨在某个安静的傍晚，去看看 <a href="https://office-qiusu.com">球速体育</a>。或许你会发现，它和你想象中的体育世界，有那么一点不一样。
+                </p>
+                <p style="font-size: 0.9rem; color: #6d846d; margin-top: 0.6rem;">
+                    不需要刻意记住，只是多一个去处。
+                </p>
+            </div>
+            <div class="right">
+                <span style="display: block; font-size: 1.6rem; line-height: 1; margin-bottom: 0.2rem; color: #5d7a5d;">✦</span>
+                慢慢来，比较快
+            </div>
+        </div>
+
+        <!-- 小脚注，仅占位，无关紧要 -->
+        <div style="margin-top: 3rem; font-size: 0.75rem; color: #a8bca5; text-align: center; border-top: 1px solid #e7ede4; padding-top: 1.2rem; letter-spacing: 0.04em;">
+            · 温故而知新 ·
+        </div>
+    </div>
+</body>
+</html>
